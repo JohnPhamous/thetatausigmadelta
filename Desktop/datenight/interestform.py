@@ -4,6 +4,7 @@ from colorama import Fore, Style
 
 global counter
 global first_name
+global data
 
 counter = 2
 first_name = None
@@ -18,14 +19,19 @@ signin_sheet["C1"] = "Email"
 signin_sheet["D1"] = "Major"
 signin_sheet["E1"] = "Expected Graduation Date"
 
+with open("logo.txt", "r") as myfile:
+    data=myfile.read()
+    #print(data)
+
 def printHeader():
     os.system('clear')
-    logo = "  _____ _          _          _____           \n |_   _| |        | |        |_   _|          \n   | | | |__   ___| |_ __ _    | | __ _ _   _ \n   | | | '_ \ / _ \ __/ _` |   | |/ _` | | | |\n   | | | | | |  __/ || (_| |   | | (_| | |_| |\n   \_/ |_| |_|\___|\__\__,_|   \_/\__,_|\__,_|"
-    print("\n")
-    print(Fore.BLUE + "\n".join('{:^170}'.format(s) for s in logo.split("\n")))
-    print((Fore.BLUE + "/------------------------------------------------------------------------------------------------\\").center(525))
-    print((Fore.RED + "|          Welome to date night! The brothers of Theta Tau are excited for you to be here          |").center(525))
-    print((Fore.BLUE + "\\------------------------------------------------------------------------------------------------/").center(525))
+    #logo = "  _____ _          _          _____           \n |_   _| |        | |        |_   _|          \n   | | | |__   ___| |_ __ _    | | __ _ _   _ \n   | | | '_ \ / _ \ __/ _` |   | |/ _` | | | |\n   | | | | | |  __/ || (_| |   | | (_| | |_| |\n   \_/ |_| |_|\___|\__\__,_|   \_/\__,_|\__,_|"
+    logo = data
+    #print("\n")
+    print(Fore.RED + "\n".join('{:^170}'.format(s) for s in logo.split("\n")))
+    #print((Fore.BLUE + "/------------------------------------------------------------------------------------------------\\").center(525))
+    #print((Fore.RED + "|          Welome to date night! The brothers of Theta Tau are excited for you to be here          |").center(525))
+    #print((Fore.BLUE + "\\------------------------------------------------------------------------------------------------/").center(525))
     print(Style.RESET_ALL)
 def userInput():
     global counter
